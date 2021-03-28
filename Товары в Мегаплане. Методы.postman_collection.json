@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "51a57f00-4987-48d2-afff-5d6aca361f48",
+		"name": "Товары в Мегаплане. Методы",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Авторизация с правами директора",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Exploratory1@1.1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Exploratory1@1.1",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/auth/access_token",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"auth",
+						"access_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка товаров 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer N2I1NzNkODc2MTI5NzQxMzAyYzQxNmEzOWQxZmZmYTdlMGE2NDJhZDM4NjNhNjMxZGE5OTc3N2ExNmU0ZmY3MQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание товара 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer N2I1NzNkODc2MTI5NzQxMzAyYzQxNmEzOWQxZmZmYTdlMGE2NDJhZDM4NjNhNjMxZGE5OTc3N2ExNmU0ZmY3MQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"contentType\": \"Offer\",\r\n            \"name\": \"Товар 1993\",\r\n            \"quantity\": 1,\r\n            \"article\": \"Артикул 19\",\r\n            \"unit\": {\r\n                \"contentType\": \"Unit\",\r\n                \"id\": \"8\"\r\n            },\r\n            \"price\": {\r\n                \"contentType\": \"Money\",\r\n                \"currency\": \"RUB\",\r\n                \"valueInMain\": 230,\r\n                \"rate\": 1,\r\n                \"value\": 230\r\n            },\r\n            \"tax\": {\r\n                \"contentType\": \"Tax\",\r\n                \"id\": \"4\"\r\n            }\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение товара \"Розетка\" 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer N2I1NzNkODc2MTI5NzQxMzAyYzQxNmEzOWQxZmZmYTdlMGE2NDJhZDM4NjNhNjMxZGE5OTc3N2ExNmU0ZmY3MQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer/324",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer",
+						"324"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактирование товара  \"LED\" 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer N2I1NzNkODc2MTI5NzQxMzAyYzQxNmEzOWQxZmZmYTdlMGE2NDJhZDM4NjNhNjMxZGE5OTc3N2ExNmU0ZmY3MQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"contentType\": \"Offer\",\r\n            \"id\": \"237\",\r\n            \"name\": \"LED-A60-standard 11Вт 160-260В Е27 4000К 900Лм ASD\",\r\n            \"quantity\": 5,\r\n            \"article\": \"LED-A60\",\r\n            \"unit\": {\r\n                \"contentType\": \"Unit\",\r\n                \"id\": \"8\"\r\n            },\r\n            \"price\": {\r\n                \"contentType\": \"Money\",\r\n                \"currency\": \"EUR\",\r\n                \"valueInMain\": 50,\r\n                \"rate\": 1,\r\n                \"value\": 50\r\n            },\r\n            \"tax\": {\r\n                \"contentType\": \"Tax\",\r\n                \"id\": \"4\"\r\n            }\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer/237",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer",
+						"237"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление товара 1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer N2I1NzNkODc2MTI5NzQxMzAyYzQxNmEzOWQxZmZmYTdlMGE2NDJhZDM4NjNhNjMxZGE5OTc3N2ExNmU0ZmY3MQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer/187",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer",
+						"187"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Авторизация с обычными правами",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Exploratory2@1.1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Exploratory2@1.1",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/auth/access_token",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"auth",
+						"access_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка товаров 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer NTEwYThjYmU2YjgyZTQ2NDNmNTFlMTM2MGIxNDk2MDE5N2VjYjcxMTBkOGIxMjU2OGZjZDM5NGQ5MzQ5ZTI0Zg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание товара 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer NTEwYThjYmU2YjgyZTQ2NDNmNTFlMTM2MGIxNDk2MDE5N2VjYjcxMTBkOGIxMjU2OGZjZDM5NGQ5MzQ5ZTI0Zg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"contentType\": \"Offer\",\r\n            \"name\": \"Новый товар 1.00\",\r\n            \"quantity\": 1,\r\n            \"article\": \"Новый артикул 09\",\r\n            \"unit\": {\r\n                \"contentType\": \"Unit\",\r\n                \"id\": \"8\"\r\n            },\r\n            \"price\": {\r\n                \"contentType\": \"Money\",\r\n                \"currency\": \"RUB\",\r\n                \"valueInMain\": 500,\r\n                \"rate\": 1,\r\n                \"value\": 500\r\n            },\r\n            \"tax\": {\r\n                \"contentType\": \"Tax\",\r\n                \"id\": \"4\"\r\n            }\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение товара \"Арбуз\" 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer NTEwYThjYmU2YjgyZTQ2NDNmNTFlMTM2MGIxNDk2MDE5N2VjYjcxMTBkOGIxMjU2OGZjZDM5NGQ5MzQ5ZTI0Zg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer/133",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer",
+						"133"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактирование товара  \"Ламинат\" 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer NTEwYThjYmU2YjgyZTQ2NDNmNTFlMTM2MGIxNDk2MDE5N2VjYjcxMTBkOGIxMjU2OGZjZDM5NGQ5MzQ5ZTI0Zg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n            \"contentType\": \"Offer\",\r\n            \"id\": \"231\",\r\n            \"name\": \"Ламинат классический\",\r\n            \"quantity\": 3,\r\n            \"article\": \"Коричневый\",\r\n            \"unit\": {\r\n                \"contentType\": \"Unit\",\r\n                \"id\": \"8\"\r\n            },\r\n            \"price\": {\r\n                \"contentType\": \"Money\",\r\n                \"currency\": \"RUB\",\r\n                \"valueInMain\": 930,\r\n                \"rate\": 1,\r\n                \"value\": 930\r\n            },\r\n            \"tax\": {\r\n                \"contentType\": \"Tax\",\r\n                \"id\": \"5\"\r\n            }\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer/231",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer",
+						"231"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление товара 2",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer NTEwYThjYmU2YjgyZTQ2NDNmNTFlMTM2MGIxNDk2MDE5N2VjYjcxMTBkOGIxMjU2OGZjZDM5NGQ5MzQ5ZTI0Zg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer/236",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer",
+						"236"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
